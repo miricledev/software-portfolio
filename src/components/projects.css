@@ -1,0 +1,100 @@
+.projects{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.featured-projects{
+    font-size: 2rem;
+    width: 100%;
+}
+
+.detail-button{
+    background-color: white;
+    border-radius: .5rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.detail-button:hover{
+    cursor: pointer;
+    background-color: rgb(228, 228, 228);
+}
+
+.card-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.project-image{
+    width: 15rem;
+    height: 15rem;
+    border: .2rem solid white;
+    border-radius: .2rem;
+}
+
+.project-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.detail-labels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.arrow{
+    font-size: 2rem;
+}
+
+.arrow:hover{
+    cursor: pointer;
+}
+
+.progress-bar-container {
+    width: 80%;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.3); /* Light background */
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px auto; /* Centers the progress bar */
+    position: relative;
+  }
+  
+.progress-bar {
+    height: 100%;
+    background-color: white; /* Progress color */
+    transition: width 0.1s linear; /* Smooth animation */
+}
+
+.github-logo-footer{
+    font-size: 2rem;
+}
+
+.github-logo-footer:hover{
+    cursor: pointer;
+}
+  

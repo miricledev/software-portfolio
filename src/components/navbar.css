@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300..700&family=M+PLUS+Code+Latin:wght@100..700&display=swap');
+
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: .5rem;
+}
+
+
+.github-logo{
+    color: white;
+    font-size: 3rem;
+}
+
+.my-name{
+    color: white;
+    font-size: 2rem;
+    font-family: "Comfortaa", serif;
+    font-weight: bold;
+}
+
+.linkedin-logo{
+    color: white;
+    font-size: 3rem;
+}
