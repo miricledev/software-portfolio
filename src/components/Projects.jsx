@@ -8,14 +8,20 @@ import './projects.css'
 
 const Projects = () => {
 
-    const projectArray = [...projects];
-
     const [count, setCount] = useState(0)
     const [progress, setProgress] = useState(0)
+    const [projectFilter, setProjectFilter] = useState(null)
+    const [projectArray, setProjectArray] = useState([...projects])
 
     const timeInterval = 5000
     const stepper = 100
     const stepTime = timeInterval / stepper
+
+    useEffect(() => {
+        setCount(0)
+        setProjectArray(projectFilter != null ? projects.filter(project => project.complete == projectFilter) : [...projects])
+
+    }, [projectFilter])
 
     useEffect(() => {
 
@@ -27,7 +33,7 @@ const Projects = () => {
             window.clearInterval(interval)
             window.clearInterval(progressUpdater)
         }
-    }, [count])
+    }, [count, projectArray])
 
     const decrement = () => {
         setCount(prevCount => (prevCount-1 >= 0 ? prevCount - 1 : projectArray.length - 1))
@@ -49,14 +55,16 @@ const Projects = () => {
 
     return (
         <div className='projects'>
-            {count + 1}
-
+            {projectFilter}
             <div className='card-header'>
                 <div className='featured-projects'>
                     Featured Projects
                 </div>
-                <div>
-                    <button className='detail-button'>Read more</button>
+                <div className='filter-buttons'>
+                    <button onClick={() => setProjectFilter(true)} className='detail-button'>Completed</button>
+                    <button onClick={() => setProjectFilter(false)} className='detail-button'>In progress</button>
+                    <button onClick={() => setProjectFilter(null)} className='detail-button'>Clear filter</button>
+                    {projectFilter != null && (<p>Filter: {projectFilter!= null ? (projectFilter ? 'Completed' : 'In progress') : 'None'}</p>)}
                 </div>
             </div>
 
@@ -66,10 +74,7 @@ const Projects = () => {
                 </div>
                 <div className='project-details'>
                     <img src={projectArray[count].photo} className='project-image' alt='image' />
-                    <div className='detail-labels'>
-                        <p>{projectArray[count].title}</p>
-                        <p style={{color: 'grey'}}>{projectArray[count].type}</p>
-                    </div>
+
                 </div>
                 <div className='right-arrow' onClick={increment}>
                     <IoIosArrowDroprightCircle className='arrow' />
@@ -77,11 +82,16 @@ const Projects = () => {
             </div>
 
             <div className='card-footer'>
+                <div className='detail-labels'>
+                    <p>{projectArray[count].title}</p>
+                    <p style={{color: 'grey'}}>{projectArray[count].type}</p>
+                </div>
                 <div className='progress-bar-container'>
                     <div className='progress-bar' style={{width: `${progress}%`}}></div>
                 </div>
-                <div>
-                    <FaGithubSquare className='github-logo-footer' />
+                <div className='github-dates'>
+                    <a href={projectArray[count].github} target='_blank' ><FaGithubSquare className='github-logo-footer' /></a>
+                    <p>{projectArray[count].complete ? 'Completed: ' : ''}{projectArray[count].date_completed}</p>
                 </div>
             </div>
         </div>

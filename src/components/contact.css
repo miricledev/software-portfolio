@@ -1,0 +1,16 @@
+.contact-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.icons{
+    font-size: 1.5rem;
+}
+
+.text{
+    font-size: 1rem;
+}
+

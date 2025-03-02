@@ -3,6 +3,7 @@ import Experience from "./components/Experience";
 import Introduction from "./components/Introduction";
 import Languages from "./components/Languages";
 import Navbar from "./components/Navbar";
+import Photo from "./components/Photo";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import './index.css'
@@ -20,6 +21,7 @@ function App() {
           <Skills />
           <Languages />
           <Experience />
+          <Photo />
         </div>
       </div>
     </div>
