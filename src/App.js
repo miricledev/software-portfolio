@@ -16,12 +16,13 @@ function App() {
       <div className="main-page-container">
         <div className="grid-container">
           <Introduction />
-          <Projects />
-          <Contact />
-          <Skills />
-          <Languages />
           <Experience />
+          <Projects />
+          <Skills />
           <Photo />
+          <Contact />
+          <Languages />
+          
         </div>
       </div>
     </div>
